@@ -1,65 +1,61 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>阿狸的站点状态</title>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-	<link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-<link href="custom.min.css" rel="stylesheet">
-	
-</head>
-<body>
-	<div class="navbar navbar-default navbar-static-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-					<span class="sr-only">切换导航</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="/">阿狸的站点状态</a>
-			</div>
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="https://ilii.me">博客</a></li>
-					<li><a href="https://qian.ilii.me">云签</a></li>
-					<li class="active"><a href="http://status.ilii.me">状态</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div id="stattip-err" class="alert alert-warning hide" role="alert">
-			<b>当前状态：</b>阿狸的部分服务发生异常，我们将尽快修复。
-		</div>
-		<div id="stattip-ok" class="alert alert-success hide" role="alert">
-			<b>当前状态：</b>阿狸的所有服务正常运行中，没有发现异常。
-		</div>
-		<div id="stattip-load" class="alert alert-info" role="alert">
-			<b>当前状态：</b>正在检测运行状态，请稍候..
-		</div>
-		<div class="table-responsive">
-			<table class="table table-hover check">
-				<thead>
-					<tr id="server-title">
-					</tr>
-				</thead>
-				<tbody id="server-container"></tbody>
-			</table>
-		</div>
-  </div>
-	<div class="footer">
-		<div class="container">
-			<p><span class="glyphicon glyphicon-refresh"></span> <span id="last-update"></span></p>
-			<p>Powered by <a href="https://github.com/digibart/upscuits" target="_blank">Upscuits</a></p>
-			<p>© 2016 Alisummer. All Rights Reserved.</p>
-		</div>
-	</div>
-	<script type="template/mustache" id="server-template">
+ <head> 
+  <meta name="theme-color" content="#e7e7e7" /> 
+  <meta name="msapplication-TileColor" content="#e7e7e7" /> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+  <title>阿狸的站点状态</title> 
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
+  <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" /> 
+  <link href="custom.min.css" rel="stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="navbar navbar-default navbar-static-top" role="navigation"> 
+   <div class="container"> 
+    <div class="navbar-header"> 
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">切换导航</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="navbar-brand" href="/">阿狸的站点状态</a> 
+    </div> 
+    <div class="collapse navbar-collapse navbar-ex1-collapse"> 
+     <ul class="nav navbar-nav"> 
+      <li><a href="https://ilii.me">博客</a></li> 
+      <li><a href="https://qian.ilii.me">云签</a></li> 
+      <li class="active"><a href="http://status.ilii.me">状态</a></li> 
+     </ul> 
+     <ul class="nav navbar-nav navbar-right"> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="container"> 
+   <div id="stattip-err" class="alert alert-warning hide" role="alert"> 
+    <b>当前状态：</b>阿狸的部分服务发生异常，我们将尽快修复。 
+   </div> 
+   <div id="stattip-ok" class="alert alert-success hide" role="alert"> 
+    <b>当前状态：</b>阿狸的所有服务正常运行中，没有发现异常。 
+   </div> 
+   <div id="stattip-load" class="alert alert-info" role="alert"> 
+    <b>当前状态：</b>正在检测运行状态，请稍候.. 
+   </div> 
+   <div class="table-responsive"> 
+    <table class="table table-hover check"> 
+     <thead> 
+      <tr id="server-title"> 
+      </tr> 
+     </thead> 
+     <tbody id="server-container"></tbody> 
+    </table> 
+   </div> 
+  </div> 
+  <div class="footer"> 
+   <div class="container"> 
+    <p><span class="glyphicon glyphicon-refresh"></span> <span id="last-update"></span></p> 
+    <p>Powered by <a href="https://github.com/digibart/upscuits" target="_blank">Upscuits</a></p> 
+    <p>&copy; 2016 Alisummer. All Rights Reserved.</p> 
+   </div> 
+  </div> 
+  <script type="template/mustache" id="server-template">
 		<tr class="{{alert}}">
 			<td rowspan="2" class="sertitle">
 				<span class="label label-status label-{{label}}"><span class="glyphicon glyphicon-{{statusicon}}"></span> {{statustxt}}</span>
@@ -80,15 +76,14 @@
 			 </div>
 			</td>
 		</tr>
-	</script>
-<script src="//cdn.bootcss.com/basket.js/0.5.2/basket.full.min.js"></script>
-    <script>basket.require({url:'//cdn.bootcss.com/jquery/2.2.0/jquery.min.js'}
+	</script> 
+  <script src="//cdn.bootcss.com/basket.js/0.5.2/basket.full.min.js"></script> 
+  <script>basket.require({url:'//cdn.bootcss.com/jquery/2.2.0/jquery.min.js'}
   ).then(function(){
 basket.require({url:'//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js'},{url:'//cdn.bootcss.com/mustache.js/2.2.1/mustache.min.js'},{url:'config.js'},{url:'upscuits.js'})
-  });</script>
-	<script type="text/javascript">
+  });</script> 
+  <script type="text/javascript">
 		jQuery(document).ready(myApp.dashboard.init);
-	</script>
-
-</body>
+	</script>  
+ </body>
 </html>
